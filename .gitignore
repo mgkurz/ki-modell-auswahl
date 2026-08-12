@@ -1,0 +1,23 @@
+# Secrets und Konfiguration
+.env
+.env.*
+*.key
+
+# Lokale Ergänzung mit personenbezogenen Kontaktdaten
+CLAUDE.local.md
+
+# Projekt-Instruktionen mit institutionellem Bezug: bleiben lokal, nicht im öffentlichen Repo
+CLAUDE.md
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Lokale Claude-Code-Einstellungen
+.claude/
+
+# Playwright-MCP-Artefakte (Snapshots aus lokalen Tests, bleiben lokal)
+.playwright-mcp/
