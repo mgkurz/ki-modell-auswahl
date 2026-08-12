@@ -215,16 +215,20 @@ a:focus-visible {
   padding: 15px;
   margin-bottom: 12px;
   transition: all 0.3s ease;
-  /* Nicht empfohlene Modelle treten zurück, bleiben aber lesbar (WCAG AA, 4.5:1) */
-  opacity: 0.75;
-  transform: scale(0.95);
+  /* Ohne gewähltes Szenario stehen alle Modelle gleichwertig und voll lesbar da */
+  opacity: 1;
+  transform: scale(1);
   border: 2px solid #e0e0e0;
   position: relative;
   overflow: hidden;
 }
+/* Erst nach der Szenario-Wahl treten nicht empfohlene Modelle zurück,
+   bleiben aber lesbar (WCAG AA, 4.5:1) */
+#models-container.has-selection .model-item:not(.recommended) {
+  opacity: 0.75;
+  transform: scale(0.95);
+}
 .model-item.recommended {
-  opacity: 1;
-  transform: scale(1);
   border-color: #02A59B;
   background: rgba(148, 228, 218, 0.15);
   box-shadow: 0 4px 12px rgba(2, 165, 155, 0.2);
@@ -628,6 +632,8 @@ function selectScenario(card) {
 
 function highlightRecommendedModels(scenario) {
   const recommendedModels = recommendations[scenario] || [];
+  // Markiert die Liste als "Szenario gewählt", erst dann treten nicht empfohlene Modelle zurück
+  document.getElementById('models-container').classList.add('has-selection');
   document.querySelectorAll('.model-item').forEach(model => {
     model.classList.remove('recommended');
   });
@@ -644,6 +650,7 @@ function resetSelection() {
     card.classList.remove('selected');
     card.setAttribute('aria-pressed', 'false');
   });
+  document.getElementById('models-container').classList.remove('has-selection');
   document.querySelectorAll('.model-item').forEach(model => {
     model.classList.remove('recommended');
   });
