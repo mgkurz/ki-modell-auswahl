@@ -374,11 +374,22 @@ h2 {
         Verfügbare Modelle in AIS.chat
       </h2>
       <div id="models-container">
-        <div class="model-item" data-model="gpt-5-5">
+        <div class="model-item" data-model="claude-sonnet">
           <div class="model-name">
-            GPT-5.5
+            Claude Sonnet 4.6
             <span class="model-badge">NEU</span>
           </div>
+          <div class="model-description">Schnelles, präzises LLM mit gutem Sprachverständnis.</div>
+        </div>
+        <div class="model-item" data-model="gemini-lite">
+          <div class="model-name">
+            Gemini 3.1 Lite
+            <span class="model-badge">NEU</span>
+          </div>
+          <div class="model-description">Performantes Modell für alltägliche Aufgaben</div>
+        </div>
+        <div class="model-item" data-model="gpt-5-5">
+          <div class="model-name">GPT-5.5</div>
           <div class="model-description">Teures, leistungsfähiges Modell für komplexe Aufgaben</div>
         </div>
         <div class="model-item" data-model="gpt-5">
@@ -424,7 +435,7 @@ h2 {
     </div>
   </div>
   <div class="footer-note">
-    Stand der Modellliste: Mai 2026. Quelle: AIS.chat (<a href="https://app.ais-chat.schule" target="_blank" rel="noopener">app.ais-chat.schule</a>).<br>
+    Stand der Modellliste: August 2026. Quelle: AIS.chat (<a href="https://app.ais-chat.schule" target="_blank" rel="noopener">app.ais-chat.schule</a>).<br>
     Erstellt von Martin Kurz, Hessische Lehrkräfteakademie. Lizenz: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank" rel="noopener">CC BY-SA 4.0</a>.<br>
     <a href="#impressum">Impressum</a> &middot; <a href="#datenschutz">Datenschutz</a> &middot; <a href="#nutzung">Nutzungsbedingungen</a>
   </div>
@@ -463,7 +474,7 @@ h2 {
   <h3>Lizenz und Weitergabe</h3>
   <p>Diese Übung steht unter <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Sie dürfen sie frei nutzen, herunterladen, verändern und weitergeben, auch in anderen Bundesländern und an anderen Schulen. Bedingung ist die Namensnennung „Martin Kurz, Hessische Lehrkräfteakademie, lizenziert unter CC BY-SA 4.0" und die Weitergabe unter derselben Lizenz. Die Lizenz gilt für alles, auch für den eingebetteten HTML-, CSS- und JavaScript-Code.</p>
   <h3>Aktualität der Modellliste</h3>
-  <p>Die dargestellten Modelle und Empfehlungen geben den Stand von Mai 2026 wieder. Das Angebot in AIS.chat ändert sich, Modelle kommen hinzu und fallen weg. Prüfen Sie vor dem Einsatz im Unterricht, welche Modelle aktuell verfügbar sind. Maßgeblich ist immer <a href="https://app.ais-chat.schule" target="_blank" rel="noopener">app.ais-chat.schule</a>.</p>
+  <p>Die dargestellten Modelle und Empfehlungen geben den Stand von August 2026 wieder. Das Angebot in AIS.chat ändert sich, Modelle kommen hinzu und fallen weg. Prüfen Sie vor dem Einsatz im Unterricht, welche Modelle aktuell verfügbar sind. Maßgeblich ist immer <a href="https://app.ais-chat.schule" target="_blank" rel="noopener">app.ais-chat.schule</a>.</p>
   <h3>Charakter der Empfehlungen</h3>
   <p>Die Zuordnung von Modellen zu Unterrichtsszenarien ist eine didaktische Orientierungshilfe, keine verbindliche Vorgabe und kein Ersatz für eigenes Ausprobieren. Welches Modell im konkreten Fall am besten passt, hängt von Ihrer Aufgabenstellung, Ihrer Lerngruppe und Ihrem Prompt ab.</p>
   <p class="legal-note">Die Übung wird ohne Gewähr bereitgestellt. Eine Haftung für Aktualität, Richtigkeit und Vollständigkeit der Angaben ist ausgeschlossen.</p>
@@ -471,11 +482,11 @@ h2 {
 </div></div>
 <script>
 const recommendations = {
-  dialog:   ['gpt-5-5', 'gpt-5', 'gpt-4o', 'llama-70b'],
-  kurz:     ['gpt-5-mini', 'gpt-4o-mini', 'llama-8b', 'mistral-nemo', 'gpt-5-nano'],
+  dialog:   ['claude-sonnet', 'gpt-5-5', 'gpt-5', 'llama-70b'],
+  kurz:     ['gpt-5-mini', 'gpt-4o-mini', 'gpt-5-nano', 'llama-8b', 'mistral-nemo', 'gemini-lite'],
   sparsam:  ['gpt-5-nano', 'mistral-nemo', 'gpt-5-mini', 'llama-8b'],
   logik:    ['gpt-5-5', 'gpt-5', 'o3-mini'],
-  allround: ['gpt-4o', 'gpt-5-mini', 'llama-70b', 'mistral-nemo']
+  allround: ['gpt-5-mini', 'claude-sonnet', 'gemini-lite', 'gpt-4o', 'llama-70b']
 };
 
 document.addEventListener('DOMContentLoaded', function() {

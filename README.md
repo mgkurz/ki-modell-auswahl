@@ -9,7 +9,7 @@ Die Übung läuft als statische Single-Page-Anwendung direkt im Browser, ohne Ba
 ## Inhalt
 
 - Fünf Unterrichtsszenarien: Dialog und kreatives Schreiben, kurze direkte Antworten, sparsame und schnelle Antworten, Mathematik und Logik, Allround-Einsatz.
-- Zehn in AIS.chat verfügbare Modelle (Stand Mai 2026): GPT-5 mini, GPT-5, GPT-5 nano, GPT-5.5, GPT-4o-mini, o3-mini, Llama-3.1-8B, Mistral Nemo Instruct, Llama-3.3-70B, GPT-4o.
+- Zwölf in AIS.chat verfügbare Modelle (Stand August 2026): Claude Sonnet 4.6, Gemini 3.1 Lite, GPT-5.5, GPT-5, GPT-5 mini, GPT-5 nano, GPT-4o, GPT-4o-mini, o3-mini, Mistral Nemo Instruct, Llama-3.3-70B, Llama-3.1-8B.
 
 ## Einsatzkontext
 
@@ -17,11 +17,14 @@ Die Übung wurde für den Selbstlernkurs „Fit für AIS.chat" der Hessischen Le
 
 ## Hinweise zur Pflege
 
-Die Modellliste in AIS.chat ändert sich gelegentlich. Bei einer Aktualisierung sind drei Stellen in `index.html` anzupassen:
+Die Modellliste in AIS.chat ändert sich gelegentlich. Bei einer Aktualisierung sind vier Stellen in `index.html` anzupassen:
 
-1. Die `<div class="model-item">`-Blöcke in der rechten Spalte (Name, Beschreibung, optional NEU-Badge oder Blatt-Symbol).
+1. Die `<div class="model-item">`-Blöcke in der rechten Spalte (Name, Beschreibung, optional NEU-Badge oder Blatt-Symbol). Sortierung: nach Anbieter und Stärke, neue Modelle zuoberst.
 2. Das `recommendations`-Objekt im `<script>`-Block, falls sich die Empfehlungen ändern.
-3. Der `<meta name="description">`-Tag und der Stand im Footer-Hinweis.
+3. Der Stand im Footer-Hinweis (und der `<meta name="description">`-Tag, falls betroffen).
+4. Der Stand der Modellliste im Nutzungsbedingungen-Overlay (`id="nutzung"`).
+
+Dazu die Modellaufzählung in dieser README. Die Zähler in der Statistik-Leiste (Modelle, Empfohlen) aktualisieren sich selbst, nur die Szenarien-Anzahl steht fest im Markup.
 
 ## Lizenz
 

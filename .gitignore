@@ -21,3 +21,6 @@ CLAUDE.md
 
 # Playwright-MCP-Artefakte (Snapshots aus lokalen Tests, bleiben lokal)
 .playwright-mcp/
+
+# Privater Arbeitsbereich: bleibt lokal, wird nie versioniert oder veröffentlicht
+workbench/
