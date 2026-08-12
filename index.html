@@ -233,6 +233,61 @@ h2 {
 .footer-note a:hover {
   text-decoration: underline;
 }
+/* Impressum, Datenschutz, Nutzung: per CSS :target ein-/ausgeblendetes Overlay, kein JS */
+.legal-view {
+  display: none;
+}
+.legal-view:target {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 36px 20px;
+}
+.legal-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  padding: 26px 30px 30px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.legal-inner h2 {
+  margin-bottom: 14px;
+  color: #333;
+  font-size: 1.5rem;
+}
+.legal-inner h3 {
+  margin: 18px 0 4px;
+  font-size: 1rem;
+  color: #764ba2;
+}
+.legal-inner p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: #555;
+  font-size: 0.95rem;
+}
+.legal-inner a {
+  color: #667eea;
+}
+.legal-note {
+  font-size: 0.8rem;
+  color: #888;
+}
+.legal-back {
+  display: inline-block;
+  margin-top: 16px;
+  font-weight: 600;
+  color: #667eea;
+  text-decoration: none;
+}
+.legal-back:hover {
+  text-decoration: underline;
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -370,9 +425,50 @@ h2 {
   </div>
   <div class="footer-note">
     Stand der Modellliste: Mai 2026. Quelle: AIS.chat (<a href="https://app.ais-chat.schule" target="_blank" rel="noopener">app.ais-chat.schule</a>).<br>
-    Erstellt von Martin Kurz, Hessische Lehrkräfteakademie. Lizenz: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank" rel="noopener">CC BY-SA 4.0</a>.
+    Erstellt von Martin Kurz, Hessische Lehrkräfteakademie. Lizenz: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank" rel="noopener">CC BY-SA 4.0</a>.<br>
+    <a href="#impressum">Impressum</a> &middot; <a href="#datenschutz">Datenschutz</a> &middot; <a href="#nutzung">Nutzungsbedingungen</a>
   </div>
 </div>
+
+<!-- ===================== IMPRESSUM, DATENSCHUTZ, NUTZUNG (CSS :target-Overlay) ===================== -->
+<div class="legal-view" id="impressum"><div class="legal-inner">
+  <h2>Impressum</h2>
+  <p>Verantwortlich für Inhalt und Gestaltung dieser Übung:</p>
+  <p>Martin Kurz<br><a href="mailto:martin@kurz.net">martin@kurz.net</a></p>
+  <p><strong>Inhaltlicher Hinweis:</strong> Interaktive Übung zur Auswahl des passenden KI-Sprachmodells für Unterrichtssettings in AIS.chat.</p>
+  <p><strong>Status:</strong> Privat erstellt mit dienstlichem Bezug. Die Übung entstand im Kontext der Arbeit an der Hessischen Lehrkräfteakademie und wird dort in der Fortbildung eingesetzt. Die inhaltliche Verantwortung liegt beim Autor.</p>
+  <p><strong>Lizenz:</strong> Diese Übung steht unter <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Namensnennung: Martin Kurz, Hessische Lehrkräfteakademie. Weitergabe nur unter gleichen Bedingungen.</p>
+  <a class="legal-back" href="#">← Zurück zur Übung</a>
+</div></div>
+
+<div class="legal-view" id="datenschutz"><div class="legal-inner">
+  <h2>Datenschutz</h2>
+  <h3>Verantwortlicher</h3>
+  <p>Martin Kurz, <a href="mailto:martin@kurz.net">martin@kurz.net</a></p>
+  <h3>Welche Daten verarbeitet diese Übung?</h3>
+  <p>Keine. Es gibt keine Cookies, kein Tracking, keine Analyse-Werkzeuge und keine externen Ressourcen (keine fremden Schriften, Skripte, Bilder oder Videos). Es findet keine Anmeldung statt, es werden keine Eingaben gespeichert und nichts wird an uns oder Dritte übertragen. Ihre Auswahl eines Szenarios bleibt ausschließlich im Arbeitsspeicher Ihres Browsers und ist nach dem Schließen der Seite verschwunden.</p>
+  <h3>Hosting und Datentransfer</h3>
+  <p>Diese Übung wird auf zwei Wegen bereitgestellt. Als frei nachnutzbare Fassung läuft sie über GitHub Pages (GitHub Inc., ein US-Anbieter). Beim Aufruf wird technisch bedingt Ihre IP-Adresse an den Hoster übertragen, damit die Seite ausgeliefert werden kann. Darüber hinaus werden keine Daten erhoben oder weitergegeben.</p>
+  <p>Wird die Übung dagegen aus einem Moodle-Kurs heraus aufgerufen, etwa dem SchulMoodle Hessen, liefert der jeweilige Moodle-Server sie aus. In diesem Fall besteht keine Verbindung zu GitHub, und es gelten die Datenschutzbestimmungen des betreffenden Moodle-Angebots.</p>
+  <h3>Externe Links</h3>
+  <p>Die Übung enthält zwei anklickbare Links (AIS.chat und Creative Commons). Sie werden erst beim Anklicken aufgerufen, nicht beim Laden der Seite. Beim Öffnen gelten die Datenschutzbestimmungen der jeweiligen Anbieter.</p>
+  <h3>Ihre Rechte</h3>
+  <p>Ihnen stehen die Rechte auf Auskunft, Berichtigung und Löschung sowie ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu. In Hessen ist das der Hessische Beauftragte für Datenschutz und Informationsfreiheit.</p>
+  <p class="legal-note">Dies ist eine fachliche Orientierung, kein anwaltlicher Rat. Im Zweifel wenden Sie sich an die zuständige Stelle Ihrer Schule oder Schulbehörde.</p>
+  <a class="legal-back" href="#">← Zurück zur Übung</a>
+</div></div>
+
+<div class="legal-view" id="nutzung"><div class="legal-inner">
+  <h2>Nutzungsbedingungen</h2>
+  <h3>Lizenz und Weitergabe</h3>
+  <p>Diese Übung steht unter <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Sie dürfen sie frei nutzen, herunterladen, verändern und weitergeben, auch in anderen Bundesländern und an anderen Schulen. Bedingung ist die Namensnennung „Martin Kurz, Hessische Lehrkräfteakademie, lizenziert unter CC BY-SA 4.0" und die Weitergabe unter derselben Lizenz. Die Lizenz gilt für alles, auch für den eingebetteten HTML-, CSS- und JavaScript-Code.</p>
+  <h3>Aktualität der Modellliste</h3>
+  <p>Die dargestellten Modelle und Empfehlungen geben den Stand von Mai 2026 wieder. Das Angebot in AIS.chat ändert sich, Modelle kommen hinzu und fallen weg. Prüfen Sie vor dem Einsatz im Unterricht, welche Modelle aktuell verfügbar sind. Maßgeblich ist immer <a href="https://app.ais-chat.schule" target="_blank" rel="noopener">app.ais-chat.schule</a>.</p>
+  <h3>Charakter der Empfehlungen</h3>
+  <p>Die Zuordnung von Modellen zu Unterrichtsszenarien ist eine didaktische Orientierungshilfe, keine verbindliche Vorgabe und kein Ersatz für eigenes Ausprobieren. Welches Modell im konkreten Fall am besten passt, hängt von Ihrer Aufgabenstellung, Ihrer Lerngruppe und Ihrem Prompt ab.</p>
+  <p class="legal-note">Die Übung wird ohne Gewähr bereitgestellt. Eine Haftung für Aktualität, Richtigkeit und Vollständigkeit der Angaben ist ausgeschlossen.</p>
+  <a class="legal-back" href="#">← Zurück zur Übung</a>
+</div></div>
 <script>
 const recommendations = {
   dialog:   ['gpt-5-5', 'gpt-5', 'gpt-4o', 'llama-70b'],
