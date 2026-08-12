@@ -11,6 +11,10 @@ Die Übung läuft als statische Single-Page-Anwendung direkt im Browser, ohne Ba
 - Fünf Unterrichtsszenarien: Dialog und kreatives Schreiben, schnelle und sparsame Antworten, Sprachen und Übersetzen, Mathematik und Logik, Allround-Einsatz.
 - Zwölf in AIS.chat verfügbare Modelle (Stand August 2026): Claude Sonnet 4.6, Gemini 3.1 Lite, GPT-5.5, GPT-5, GPT-5 mini, GPT-5 nano, GPT-4o, GPT-4o-mini, o3-mini, Mistral Nemo Instruct, Llama-3.3-70B, Llama-3.1-8B.
 
+## Technik und Gestaltung
+
+Eine einzige HTML-Datei, kein Build-Schritt, kein Backend, keine externen Abhängigkeiten zur Laufzeit. Gestaltet nach dem AIS.chat-Styleguide. Schrift (Barlow), Logo, Hintergrundmuster und Symbole sind als Base64 beziehungsweise Inline-SVG eingebettet, es wird also beim Aufruf kein fremder Server kontaktiert.
+
 ## Einsatzkontext
 
 Die Übung wurde für den Selbstlernkurs „Fit für AIS.chat" der Hessischen Lehrkräfteakademie erstellt (SchulMoodle Hessen). Sie ist als Embed oder als Link nutzbar. Sie kann ohne Anpassung in anderen Bundesländern eingesetzt werden, sofern dort dieselben Modelle über AIS.chat angeboten werden.
@@ -33,3 +37,5 @@ Lizenziert unter der [Creative Commons Namensnennung. Weitergabe unter gleichen 
 © 2026 Martin Kurz, Hessische Lehrkräfteakademie.
 
 Namensnennung bei Weiterverwendung: „Martin Kurz, Hessische Lehrkräfteakademie, lizenziert unter CC BY-SA 4.0". Bearbeitungen und Weitergaben unter gleicher Lizenz erwünscht.
+
+Nicht von dieser Lizenz erfasst sind die eingebetteten Fremdinhalte: AIS.chat-Logo und Hintergrundmuster sind Kennzeichen des Anbieters und beim Weitergeben unter eigenem Namen zu ersetzen oder zu entfernen. Die Schrift [Barlow](https://openfontlicense.org) steht unter der SIL Open Font License 1.1, die Symbole von [Phosphor Icons](https://phosphoricons.com) unter der MIT-Lizenz.
