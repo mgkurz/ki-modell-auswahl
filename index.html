@@ -343,16 +343,16 @@ h2 {
           Komplexe Unterrichtsszenarien, Dialogpartner, kreative Texte. Hier sind Ausdruck, Struktur und Stil wichtig.
         </div>
       </div>
-      <div class="scenario-card" data-scenario="kurz">
-        <div class="scenario-title">⚡ Kurz &amp; Direkt</div>
+      <div class="scenario-card" data-scenario="schnell">
+        <div class="scenario-title">⚡ Schnell &amp; Sparsam</div>
         <div class="scenario-description">
-          Schnelle Antworten auf Schülerfragen, Definitionen, Vokabelhilfen. Kleine, schnell reagierende Modelle genügen.
+          Schnelle Antworten auf Schülerfragen, Definitionen, kurze Feedbacks. Kleine, effiziente Modelle genügen und schonen das Tokenbudget. Das Blatt-Symbol (🌱) im AIS.chat-UI kennzeichnet besonders sparsame Modelle.
         </div>
       </div>
-      <div class="scenario-card" data-scenario="sparsam">
-        <div class="scenario-title">💾 Sparsam &amp; Schnell</div>
+      <div class="scenario-card" data-scenario="sprachen">
+        <div class="scenario-title">🌍 Sprachen &amp; Übersetzen</div>
         <div class="scenario-description">
-          Bei begrenzten Ressourcen oder für kurze Feedbacks. Ressourcenschonende, effiziente Modelle sind ideal. Das Blatt-Symbol (🌱) im AIS.chat-UI kennzeichnet besonders sparsame Modelle.
+          Übersetzungen, Fremdsprachenunterricht, mehrsprachige Materialien. Modelle mit breiter Sprachabdeckung und gutem Sprachgefühl.
         </div>
       </div>
       <div class="scenario-card" data-scenario="logik">
@@ -483,8 +483,8 @@ h2 {
 <script>
 const recommendations = {
   dialog:   ['claude-sonnet', 'gpt-5-5', 'gpt-5', 'llama-70b'],
-  kurz:     ['gpt-5-mini', 'gpt-4o-mini', 'gpt-5-nano', 'llama-8b', 'mistral-nemo', 'gemini-lite'],
-  sparsam:  ['gpt-5-nano', 'mistral-nemo', 'gpt-5-mini', 'llama-8b'],
+  schnell:  ['gpt-5-mini', 'gpt-4o-mini', 'gpt-5-nano', 'llama-8b', 'mistral-nemo', 'gemini-lite'],
+  sprachen: ['claude-sonnet', 'gpt-5', 'mistral-nemo'],
   logik:    ['gpt-5-5', 'gpt-5', 'o3-mini'],
   allround: ['gpt-5-mini', 'claude-sonnet', 'gemini-lite', 'gpt-4o', 'llama-70b']
 };
