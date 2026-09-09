@@ -429,7 +429,7 @@ a:focus-visible {
     <button class="reset-button" onclick="resetSelection()">Auswahl zurücksetzen</button>
     <div class="stats">
       <div class="stat-item">
-        <span class="stat-number" id="totalModels">10</span>
+        <span class="stat-number" id="totalModels">9</span>
         <span class="stat-label">Modelle verfügbar</span>
       </div>
       <div class="stat-item">
@@ -493,10 +493,7 @@ a:focus-visible {
           <div class="model-description">Schnelles, präzises LLM mit gutem Sprachverständnis.</div>
         </div>
         <div class="model-item" data-model="gemini-lite">
-          <div class="model-name">
-            Gemini 3.1 Lite
-            <span class="model-badge">NEU</span>
-          </div>
+          <div class="model-name">Gemini 3.1 Lite</div>
           <div class="model-description">Performantes Modell für alltägliche Aufgaben</div>
         </div>
         <div class="model-item" data-model="gpt-5-5">
@@ -518,18 +515,6 @@ a:focus-visible {
           </div>
           <div class="model-description">Sehr schnell und günstig</div>
         </div>
-        <div class="model-item" data-model="gpt-4o">
-          <div class="model-name">GPT-4o</div>
-          <div class="model-description">Ein führendes Modell von OpenAI.</div>
-        </div>
-        <div class="model-item" data-model="gpt-4o-mini">
-          <div class="model-name">GPT-4o-mini</div>
-          <div class="model-description">Eine verkleinerte Version von GPT-4o.</div>
-        </div>
-        <div class="model-item" data-model="o3-mini">
-          <div class="model-name">o3-mini</div>
-          <div class="model-description">Ideal für komplexe Aufgaben in Mathe/ Naturwissenschaften</div>
-        </div>
         <div class="model-item" data-model="mistral-nemo">
           <div class="model-name">Mistral Nemo Instruct</div>
           <div class="model-description">multilingual, Open Source und effizient</div>
@@ -546,7 +531,7 @@ a:focus-visible {
     </div>
   </div>
   <div class="footer-note">
-    Stand der Modellliste: August 2026. Quelle: AIS.chat (<a href="https://app.ais-chat.schule" target="_blank" rel="noopener">app.ais-chat.schule</a>).<br>
+    Stand der Modellliste: September 2026. Quelle: AIS.chat (<a href="https://app.ais-chat.schule" target="_blank" rel="noopener">app.ais-chat.schule</a>).<br>
     Erstellt von Martin Kurz, Hessische Lehrkräfteakademie. Lizenz: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank" rel="noopener">CC BY-SA 4.0</a>.<br>
     <a href="#impressum">Impressum</a> &middot; <a href="#datenschutz">Datenschutz</a> &middot; <a href="#nutzung">Nutzungsbedingungen</a>
   </div>
@@ -588,19 +573,29 @@ a:focus-visible {
   <p>Drei Bestandteile stammen nicht von mir und haben eine eigene Rechtslage. Das AIS.chat-Logo und das Muster im Kopfbereich sind Kennzeichen des Anbieters und bleiben es; sie sind nicht von der CC-Lizenz erfasst. Wenn Sie diese Übung bearbeiten und unter eigenem Namen weitergeben, ersetzen oder entfernen Sie diese Elemente.</p>
   <p>Die eingebettete Schrift Barlow steht unter der <a href="https://openfontlicense.org" target="_blank" rel="noopener">SIL Open Font License 1.1</a>, die Symbole stammen von <a href="https://phosphoricons.com" target="_blank" rel="noopener">Phosphor Icons</a> und stehen unter der MIT-Lizenz. Beide erlauben die Weitergabe innerhalb dieser Datei, ihre Lizenzbedingungen bleiben unberührt.</p>
   <h3>Aktualität der Modellliste</h3>
-  <p>Die dargestellten Modelle und Empfehlungen geben den Stand von August 2026 wieder. Das Angebot in AIS.chat ändert sich, Modelle kommen hinzu und fallen weg. Prüfen Sie vor dem Einsatz im Unterricht, welche Modelle aktuell verfügbar sind. Maßgeblich ist immer <a href="https://app.ais-chat.schule" target="_blank" rel="noopener">app.ais-chat.schule</a>.</p>
+  <p>Die dargestellten Modelle und Empfehlungen geben den Stand von September 2026 wieder. Das Angebot in AIS.chat ändert sich, Modelle kommen hinzu und fallen weg. Prüfen Sie vor dem Einsatz im Unterricht, welche Modelle aktuell verfügbar sind. Maßgeblich ist immer <a href="https://app.ais-chat.schule" target="_blank" rel="noopener">app.ais-chat.schule</a>.</p>
   <h3>Charakter der Empfehlungen</h3>
   <p>Die Zuordnung von Modellen zu Unterrichtsszenarien ist eine didaktische Orientierungshilfe, keine verbindliche Vorgabe und kein Ersatz für eigenes Ausprobieren. Welches Modell im konkreten Fall am besten passt, hängt von Ihrer Aufgabenstellung, Ihrer Lerngruppe und Ihrem Prompt ab.</p>
   <p class="legal-note">Die Übung wird ohne Gewähr bereitgestellt. Eine Haftung für Aktualität, Richtigkeit und Vollständigkeit der Angaben ist ausgeschlossen.</p>
   <a class="legal-back" href="#">← Zurück zur Übung</a>
 </div></div>
 <script>
+/*
+  Zuordnung der Modelle zu den Unterrichtsszenarien.
+  Die IDs entsprechen den data-model-Attributen der Modellkarten.
+
+  Zu "logik": Die Auswahl folgt der Einstufung des Anbieters. Die AIS.chat-FAQ
+  (https://ais-chat.schule/faq/, abgerufen am 09.09.2026) nennt wörtlich:
+  "Ja, AIS.chat bietet mit Gemini 3.1. Lite, GPT-5.5., GPT-5 und GPT-5 mini
+  vier Reasoning-Modelle an." Claude Sonnet 4.6 zählt die FWU dort bewusst
+  nicht dazu, deshalb steht es hier nicht, obwohl es sprachlich stark ist.
+*/
 const recommendations = {
   dialog:   ['claude-sonnet', 'gpt-5-5', 'gpt-5', 'llama-70b'],
-  schnell:  ['gpt-5-mini', 'gpt-4o-mini', 'gpt-5-nano', 'llama-8b', 'mistral-nemo', 'gemini-lite'],
+  schnell:  ['gpt-5-mini', 'gpt-5-nano', 'llama-8b', 'mistral-nemo', 'gemini-lite'],
   sprachen: ['claude-sonnet', 'gpt-5', 'mistral-nemo'],
-  logik:    ['gpt-5-5', 'gpt-5', 'o3-mini'],
-  allround: ['gpt-5-mini', 'claude-sonnet', 'gemini-lite', 'gpt-4o', 'llama-70b']
+  logik:    ['gpt-5-5', 'gpt-5', 'gpt-5-mini', 'gemini-lite'],
+  allround: ['gpt-5-mini', 'claude-sonnet', 'gemini-lite', 'llama-70b']
 };
 
 document.addEventListener('DOMContentLoaded', function() {
