@@ -81,6 +81,14 @@ h1 {
   font-size: 1.1rem;
   opacity: 0.95;
 }
+.noscript-hinweis {
+  background: #F4F0E6;
+  color: #000;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 30px 30px 0;
+  text-align: center;
+}
 .info-box {
   background: #F4F0E6;
   color: #000;
@@ -420,6 +428,10 @@ a:focus-visible {
     <h1>Welches KI-Modell für welchen Einsatz?</h1>
     <p class="subtitle">Finden Sie das passende Sprachmodell für Ihr Unterrichtssetting in AIS.chat.</p>
   </header>
+  <noscript>
+    <p class="noscript-hinweis">Diese Übung braucht JavaScript. Ohne JavaScript wird die Modellliste nicht angezeigt.
+    Welche Modelle in AIS.chat verfügbar sind, steht unter <a href="https://app.ais-chat.schule">app.ais-chat.schule</a>.</p>
+  </noscript>
   <div class="info-box">
     <h3><svg class="ph" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M176,232a8,8,0,0,1-8,8H88a8,8,0,0,1,0-16h80A8,8,0,0,1,176,232Zm40-128a87.55,87.55,0,0,1-33.64,69.21A16.24,16.24,0,0,0,176,186v6a16,16,0,0,1-16,16H96a16,16,0,0,1-16-16v-6a16,16,0,0,0-6.23-12.66A87.59,87.59,0,0,1,40,104.49C39.74,56.83,78.26,17.14,125.88,16A88,88,0,0,1,216,104Zm-16,0a72,72,0,0,0-73.74-72c-39,.92-70.47,33.39-70.26,72.39a71.65,71.65,0,0,0,27.64,56.3A32,32,0,0,1,96,186v6h64v-6a32.15,32.15,0,0,1,12.47-25.35A71.65,71.65,0,0,0,200,104Zm-16.11-9.34a57.6,57.6,0,0,0-46.56-46.55,8,8,0,0,0-2.66,15.78c16.57,2.79,30.63,16.85,33.44,33.45A8,8,0,0,0,176,104a9,9,0,0,0,1.35-.11A8,8,0,0,0,183.89,94.66Z"/></svg> So funktioniert's</h3>
     <p>
@@ -484,54 +496,11 @@ a:focus-visible {
         <span class="icon"><svg class="ph" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.87,83.16A104.1,104.1,0,1,1,195.67,49l22.67-22.68a8,8,0,0,1,11.32,11.32l-96,96a8,8,0,0,1-11.32-11.32l27.72-27.72a40,40,0,1,0,17.87,31.09,8,8,0,1,1,16-.9,56,56,0,1,1-22.38-41.65L184.3,60.39a87.88,87.88,0,1,0,23.13,29.67,8,8,0,0,1,14.44-6.9Z"/></svg></span>
         Verfügbare Modelle in AIS.chat
       </h2>
-      <div id="models-container">
-        <div class="model-item" data-model="claude-sonnet">
-          <div class="model-name">
-            Claude Sonnet 4.6
-            <span class="model-badge">NEU</span>
-          </div>
-          <div class="model-description">Schnelles, präzises LLM mit gutem Sprachverständnis.</div>
-        </div>
-        <div class="model-item" data-model="gemini-lite">
-          <div class="model-name">Gemini 3.1 Lite</div>
-          <div class="model-description">Performantes Modell für alltägliche Aufgaben</div>
-        </div>
-        <div class="model-item" data-model="gpt-5-5">
-          <div class="model-name">GPT-5.5</div>
-          <div class="model-description">Teures, leistungsfähiges Modell für komplexe Aufgaben</div>
-        </div>
-        <div class="model-item" data-model="gpt-5">
-          <div class="model-name">GPT-5</div>
-          <div class="model-description">Für komplexe Aufgaben, reasoning</div>
-        </div>
-        <div class="model-item" data-model="gpt-5-mini">
-          <div class="model-name">GPT-5 mini</div>
-          <div class="model-description">Schnell und kosten-effizient; Allrounder</div>
-        </div>
-        <div class="model-item" data-model="gpt-5-nano">
-          <div class="model-name">
-            GPT-5 nano
-            <span class="model-leaf" title="Energieeffizientes Modell">🌱</span>
-          </div>
-          <div class="model-description">Sehr schnell und günstig</div>
-        </div>
-        <div class="model-item" data-model="mistral-nemo">
-          <div class="model-name">Mistral Nemo Instruct</div>
-          <div class="model-description">multilingual, Open Source und effizient</div>
-        </div>
-        <div class="model-item" data-model="llama-70b">
-          <div class="model-name">Llama-3.3-70B</div>
-          <div class="model-description">Ein leistungsstarkes, aktuelles Modell von Meta.</div>
-        </div>
-        <div class="model-item" data-model="llama-8b">
-          <div class="model-name">Llama-3.1-8B</div>
-          <div class="model-description">Effizient für leichtere Aufgaben.</div>
-        </div>
-      </div>
+      <div id="models-container"></div>
     </div>
   </div>
   <div class="footer-note">
-    Stand der Modellliste: September 2026. Quelle: AIS.chat (<a href="https://app.ais-chat.schule" target="_blank" rel="noopener">app.ais-chat.schule</a>).<br>
+    Stand der Modellliste: <span class="stand"></span>. Quelle: AIS.chat (<a href="https://app.ais-chat.schule" target="_blank" rel="noopener">app.ais-chat.schule</a>).<br>
     Erstellt von Martin Kurz, Hessische Lehrkräfteakademie. Lizenz: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank" rel="noopener">CC BY-SA 4.0</a>.<br>
     <a href="#impressum">Impressum</a> &middot; <a href="#datenschutz">Datenschutz</a> &middot; <a href="#nutzung">Nutzungsbedingungen</a>
   </div>
@@ -573,16 +542,47 @@ a:focus-visible {
   <p>Drei Bestandteile stammen nicht von mir und haben eine eigene Rechtslage. Das AIS.chat-Logo und das Muster im Kopfbereich sind Kennzeichen des Anbieters und bleiben es; sie sind nicht von der CC-Lizenz erfasst. Wenn Sie diese Übung bearbeiten und unter eigenem Namen weitergeben, ersetzen oder entfernen Sie diese Elemente.</p>
   <p>Die eingebettete Schrift Barlow steht unter der <a href="https://openfontlicense.org" target="_blank" rel="noopener">SIL Open Font License 1.1</a>, die Symbole stammen von <a href="https://phosphoricons.com" target="_blank" rel="noopener">Phosphor Icons</a> und stehen unter der MIT-Lizenz. Beide erlauben die Weitergabe innerhalb dieser Datei, ihre Lizenzbedingungen bleiben unberührt.</p>
   <h3>Aktualität der Modellliste</h3>
-  <p>Die dargestellten Modelle und Empfehlungen geben den Stand von September 2026 wieder. Das Angebot in AIS.chat ändert sich, Modelle kommen hinzu und fallen weg. Prüfen Sie vor dem Einsatz im Unterricht, welche Modelle aktuell verfügbar sind. Maßgeblich ist immer <a href="https://app.ais-chat.schule" target="_blank" rel="noopener">app.ais-chat.schule</a>.</p>
+  <p>Die dargestellten Modelle und Empfehlungen geben den Stand von <span class="stand"></span> wieder. Das Angebot in AIS.chat ändert sich, Modelle kommen hinzu und fallen weg. Prüfen Sie vor dem Einsatz im Unterricht, welche Modelle aktuell verfügbar sind. Maßgeblich ist immer <a href="https://app.ais-chat.schule" target="_blank" rel="noopener">app.ais-chat.schule</a>.</p>
   <h3>Charakter der Empfehlungen</h3>
   <p>Die Zuordnung von Modellen zu Unterrichtsszenarien ist eine didaktische Orientierungshilfe, keine verbindliche Vorgabe und kein Ersatz für eigenes Ausprobieren. Welches Modell im konkreten Fall am besten passt, hängt von Ihrer Aufgabenstellung, Ihrer Lerngruppe und Ihrem Prompt ab.</p>
   <p class="legal-note">Die Übung wird ohne Gewähr bereitgestellt. Eine Haftung für Aktualität, Richtigkeit und Vollständigkeit der Angaben ist ausgeschlossen.</p>
   <a class="legal-back" href="#">← Zurück zur Übung</a>
 </div></div>
 <script>
+/* =====================================================================
+   PFLEGEBEREICH
+   Hier stehen alle Angaben, die sich mit dem Angebot in AIS.chat ändern.
+   Wer die Modellliste aktualisiert, ändert nur diesen Abschnitt.
+   Anleitung: README.md, Abschnitt "Hinweise zur Pflege".
+   Bisherige Stände: MODELLHISTORIE.md.
+   ===================================================================== */
+
+// Stand der Modellliste. Steht automatisch im Fußzeilen-Hinweis und im
+// Overlay "Nutzungsbedingungen".
+const STAND = 'September 2026';
+
+// Die Modelle in ihrer Anzeigereihenfolge: nach Anbieter und Stärke
+// sortiert, neue Modelle zuoberst.
+//   id            Kürzel, über das die Empfehlungen weiter unten das Modell ansprechen
+//   name          Name genau wie in AIS.chat
+//   beschreibung  Beschreibung wortgleich aus AIS.chat
+//   badge         optional, zum Beispiel 'NEU'
+//   blatt         optional, true für das Blatt-Symbol sparsamer Modelle
+const modelle = [
+  { id: 'claude-sonnet', name: 'Claude Sonnet 4.6',     beschreibung: 'Schnelles, präzises LLM mit gutem Sprachverständnis.', badge: 'NEU' },
+  { id: 'gemini-lite',   name: 'Gemini 3.1 Lite',       beschreibung: 'Performantes Modell für alltägliche Aufgaben' },
+  { id: 'gpt-5-5',       name: 'GPT-5.5',               beschreibung: 'Teures, leistungsfähiges Modell für komplexe Aufgaben' },
+  { id: 'gpt-5',         name: 'GPT-5',                 beschreibung: 'Für komplexe Aufgaben, reasoning' },
+  { id: 'gpt-5-mini',    name: 'GPT-5 mini',            beschreibung: 'Schnell und kosten-effizient; Allrounder' },
+  { id: 'gpt-5-nano',    name: 'GPT-5 nano',            beschreibung: 'Sehr schnell und günstig', blatt: true },
+  { id: 'mistral-nemo',  name: 'Mistral Nemo Instruct', beschreibung: 'multilingual, Open Source und effizient' },
+  { id: 'llama-70b',     name: 'Llama-3.3-70B',         beschreibung: 'Ein leistungsstarkes, aktuelles Modell von Meta.' },
+  { id: 'llama-8b',      name: 'Llama-3.1-8B',          beschreibung: 'Effizient für leichtere Aufgaben.' }
+];
+
 /*
-  Zuordnung der Modelle zu den Unterrichtsszenarien.
-  Die IDs entsprechen den data-model-Attributen der Modellkarten.
+  Zuordnung der Modelle zu den fünf Unterrichtsszenarien.
+  Die Kürzel müssen zu den ids im modelle-Array oben passen.
 
   Zu "logik": Die Auswahl folgt der Einstufung des Anbieters. Die AIS.chat-FAQ
   (https://ais-chat.schule/faq/, abgerufen am 09.09.2026) nennt wörtlich:
@@ -598,10 +598,57 @@ const recommendations = {
   allround: ['gpt-5-mini', 'claude-sonnet', 'gemini-lite', 'llama-70b']
 };
 
+/* ===================== Ab hier nur noch Technik ===================== */
+
 document.addEventListener('DOMContentLoaded', function() {
+  renderModelle();
+  zeigeStand();
   attachEventListeners();
   updateStats();
 });
+
+// Baut die Modellkarten aus dem modelle-Array.
+function renderModelle() {
+  const container = document.getElementById('models-container');
+  modelle.forEach(modell => {
+    const karte = document.createElement('div');
+    karte.className = 'model-item';
+    karte.dataset.model = modell.id;
+
+    const name = document.createElement('div');
+    name.className = 'model-name';
+    name.append(modell.name);
+    if (modell.badge) {
+      name.append(erzeugeSpan('model-badge', modell.badge));
+    }
+    if (modell.blatt) {
+      const blatt = erzeugeSpan('model-leaf', '🌱');
+      blatt.title = 'Energieeffizientes Modell';
+      name.append(blatt);
+    }
+
+    const beschreibung = document.createElement('div');
+    beschreibung.className = 'model-description';
+    beschreibung.textContent = modell.beschreibung;
+
+    karte.append(name, beschreibung);
+    container.append(karte);
+  });
+}
+
+function erzeugeSpan(klasse, text) {
+  const span = document.createElement('span');
+  span.className = klasse;
+  span.textContent = text;
+  return span;
+}
+
+// Trägt den Stand der Modellliste an allen Stellen ein, die ihn nennen.
+function zeigeStand() {
+  document.querySelectorAll('.stand').forEach(stelle => {
+    stelle.textContent = STAND;
+  });
+}
 
 function attachEventListeners() {
   const scenarioCards = document.querySelectorAll('.scenario-card');
