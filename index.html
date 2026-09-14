@@ -559,7 +559,7 @@ a:focus-visible {
 
 // Stand der Modellliste. Steht automatisch im Fußzeilen-Hinweis und im
 // Overlay "Nutzungsbedingungen".
-const STAND = 'September 2026';
+const STAND = 'Mitte September 2026';
 
 // Die Modelle in ihrer Anzeigereihenfolge: nach Anbieter und Stärke
 // sortiert, neue Modelle zuoberst.
@@ -569,11 +569,10 @@ const STAND = 'September 2026';
 //   badge         optional, zum Beispiel 'NEU'
 //   blatt         optional, true für das Blatt-Symbol sparsamer Modelle
 const modelle = [
-  { id: 'claude-sonnet', name: 'Claude Sonnet 4.6',     beschreibung: 'Schnelles, präzises LLM mit gutem Sprachverständnis.', badge: 'NEU' },
+  { id: 'gpt-5-6-luna',  name: 'GPT-5.6-luna',          beschreibung: 'kosteneffizienter Allrounder', badge: 'NEU' },
+  { id: 'claude-sonnet', name: 'Claude Sonnet 4.6',     beschreibung: 'Schnelles, präzises LLM mit gutem Sprachverständnis.' },
   { id: 'gemini-lite',   name: 'Gemini 3.1 Lite',       beschreibung: 'Performantes Modell für alltägliche Aufgaben' },
   { id: 'gpt-5-5',       name: 'GPT-5.5',               beschreibung: 'Teures, leistungsfähiges Modell für komplexe Aufgaben' },
-  { id: 'gpt-5',         name: 'GPT-5',                 beschreibung: 'Für komplexe Aufgaben, reasoning' },
-  { id: 'gpt-5-mini',    name: 'GPT-5 mini',            beschreibung: 'Schnell und kosten-effizient; Allrounder' },
   { id: 'gpt-5-nano',    name: 'GPT-5 nano',            beschreibung: 'Sehr schnell und günstig', blatt: true },
   { id: 'mistral-nemo',  name: 'Mistral Nemo Instruct', beschreibung: 'multilingual, Open Source und effizient' },
   { id: 'llama-70b',     name: 'Llama-3.3-70B',         beschreibung: 'Ein leistungsstarkes, aktuelles Modell von Meta.' },
@@ -585,17 +584,27 @@ const modelle = [
   Die Kürzel müssen zu den ids im modelle-Array oben passen.
 
   Zu "logik": Die Auswahl folgt der Einstufung des Anbieters. Die AIS.chat-FAQ
-  (https://ais-chat.schule/faq/, abgerufen am 09.09.2026) nennt wörtlich:
+  (https://ais-chat.schule/faq/, zuletzt abgerufen am 14.09.2026) nennt wörtlich:
   "Ja, AIS.chat bietet mit Gemini 3.1. Lite, GPT-5.5., GPT-5 und GPT-5 mini
-  vier Reasoning-Modelle an." Claude Sonnet 4.6 zählt die FWU dort bewusst
-  nicht dazu, deshalb steht es hier nicht, obwohl es sprachlich stark ist.
+  vier Reasoning-Modelle an." GPT-5 und GPT-5 mini sind seit Mitte September
+  2026 nicht mehr verfügbar, übrig bleiben GPT-5.5 und Gemini 3.1 Lite.
+  Claude Sonnet 4.6 zählt die FWU dort bewusst nicht dazu, deshalb steht es
+  hier nicht, obwohl es sprachlich stark ist. GPT-5.6-luna ist in der FAQ noch
+  nicht erwähnt; ob es als Reasoning-Modell gilt, ist offen. Beim nächsten
+  Abgleich die FAQ prüfen und die Zuordnung dann nachziehen.
+
+  Zu "sprachen" und "dialog": GPT-5 ist weggefallen. In "sprachen" rückt
+  GPT-5.5 als stärkstes verbliebenes OpenAI-Modell nach, in "dialog" stand es
+  schon. GPT-5.6-luna übernimmt in "schnell" und "allround" den Platz von
+  GPT-5 mini, dessen Beschreibung ("kosteneffizient", "Allrounder") es fast
+  wortgleich fortführt.
 */
 const recommendations = {
-  dialog:   ['claude-sonnet', 'gpt-5-5', 'gpt-5', 'llama-70b'],
-  schnell:  ['gpt-5-mini', 'gpt-5-nano', 'llama-8b', 'mistral-nemo', 'gemini-lite'],
-  sprachen: ['claude-sonnet', 'gpt-5', 'mistral-nemo'],
-  logik:    ['gpt-5-5', 'gpt-5', 'gpt-5-mini', 'gemini-lite'],
-  allround: ['gpt-5-mini', 'claude-sonnet', 'gemini-lite', 'llama-70b']
+  dialog:   ['claude-sonnet', 'gpt-5-5', 'llama-70b'],
+  schnell:  ['gpt-5-6-luna', 'gpt-5-nano', 'llama-8b', 'mistral-nemo', 'gemini-lite'],
+  sprachen: ['claude-sonnet', 'gpt-5-5', 'mistral-nemo'],
+  logik:    ['gpt-5-5', 'gemini-lite'],
+  allround: ['gpt-5-6-luna', 'claude-sonnet', 'gemini-lite', 'llama-70b']
 };
 
 /* ===================== Ab hier nur noch Technik ===================== */

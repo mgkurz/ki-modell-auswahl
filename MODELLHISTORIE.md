@@ -14,7 +14,45 @@ Screenshots mit unterschiedlich aktivem Modell.
 
 ---
 
-## September 2026 (aktuell), erfasst am 09.09.2026
+## Mitte September 2026 (aktuell), erfasst am 14.09.2026
+
+Acht Modelle.
+
+| Modell | Beschreibung in AIS.chat | Kennzeichnung |
+|---|---|---|
+| GPT-5.6-luna | kosteneffizienter Allrounder | NEU |
+| Claude Sonnet 4.6 | Schnelles, präzises LLM mit gutem Sprachverständnis. | |
+| Gemini 3.1 Lite | Performantes Modell für alltägliche Aufgaben | |
+| GPT-5.5 | Teures, leistungsfähiges Modell für komplexe Aufgaben | |
+| GPT-5 nano | Sehr schnell und günstig | 🌱 |
+| Mistral Nemo Instruct | multilingual, Open Source und effizient | |
+| Llama-3.3-70B | Ein leistungsstarkes, aktuelles Modell von Meta. | |
+| Llama-3.1-8B | Effizient für leichtere Aufgaben. | |
+
+**Änderungen gegenüber dem 09.09.2026**
+
+- Weggefallen: **GPT-5**, **GPT-5 mini**. Von der GPT-5-Familie bleiben GPT-5.5 und GPT-5 nano.
+- Neu: **GPT-5.6-luna**. Die Beschreibung „kosteneffizienter Allrounder" führt die von
+  GPT-5 mini („Schnell und kosten-effizient; Allrounder") fast wortgleich fort, das Modell
+  liest sich als dessen Nachfolger.
+- Beschreibungen: alle unverändert.
+- Das NEU-Badge bei Claude Sonnet 4.6 ist entfallen, GPT-5.6-luna trägt es jetzt.
+
+**Folgen für die Empfehlungen**
+
+- „Dialog & Kreatives Schreiben" verliert GPT-5.
+- „Schnell & Sparsam" und „Allround-Einsatz": GPT-5.6-luna übernimmt den Platz von GPT-5 mini.
+- „Sprachen & Übersetzen" verliert GPT-5, GPT-5.5 rückt als stärkstes verbliebenes
+  OpenAI-Modell nach.
+- „Mathematik & Logik" verliert GPT-5 und GPT-5 mini. Nach der Einstufung des Anbieters
+  bleiben GPT-5.5 und Gemini 3.1 Lite. Die AIS.chat-FAQ (abgerufen am 14.09.2026) nennt
+  weiterhin die alten vier Reasoning-Modelle und erwähnt GPT-5.6-luna noch nicht. Ob luna
+  als Reasoning-Modell gilt, bleibt offen, bis die FAQ nachgezogen ist. Beim nächsten
+  Abgleich prüfen.
+
+---
+
+## September 2026, erste Erfassung am 09.09.2026
 
 Neun Modelle.
 

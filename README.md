@@ -9,7 +9,7 @@ Die Übung läuft als statische Single-Page-Anwendung direkt im Browser, ohne Ba
 ## Inhalt
 
 - Fünf Unterrichtsszenarien: Dialog und kreatives Schreiben, schnelle und sparsame Antworten, Sprachen und Übersetzen, Mathematik und Logik, Allround-Einsatz.
-- Neun in AIS.chat verfügbare Modelle (Stand September 2026): Claude Sonnet 4.6, Gemini 3.1 Lite, GPT-5.5, GPT-5, GPT-5 mini, GPT-5 nano, Mistral Nemo Instruct, Llama-3.3-70B, Llama-3.1-8B. Frühere Stände stehen in [MODELLHISTORIE.md](MODELLHISTORIE.md).
+- Acht in AIS.chat verfügbare Modelle (Stand Mitte September 2026): GPT-5.6-luna, Claude Sonnet 4.6, Gemini 3.1 Lite, GPT-5.5, GPT-5 nano, Mistral Nemo Instruct, Llama-3.3-70B, Llama-3.1-8B. Frühere Stände stehen in [MODELLHISTORIE.md](MODELLHISTORIE.md).
 
 ## Technik und Gestaltung
 
